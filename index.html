@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+     body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: purple;
+    padding: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+     background-image: url('https://lh3.googleusercontent.com/proxy/LMrEg-jvVJLiAoH7pvaV4cT98LnLTVvO_I4gzXi4-WbeY3D6ZdVpmM-d-CyxEmBbNtwy-fBGu_DNHXN6reU3bHJskxwWhFP96Epekwy7Rpix3PjNT6T2Kxd9JUivm60OAHQyv4W-pEn2ptvMllxWyRAgOOZCImCcm6J1ISU');
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+h1 {
+    text-align: center;
+    color: purple;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    animation: slideInLeft 0.5s ease-in-out;
+}
+
+@keyframes slideInLeft {
+    0% { transform: translateX(-50px); }
+    100% { transform: translateX(0); }
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: purple; /* Texte en blanc */
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid purple;
+    background-color: white;
+    color: #141414;
+    border-radius: 10px;
+    animation: slideInRight 0.5s ease-in-out;
+}
+
+@keyframes slideInRight {
+    0% { transform: translateX(50px); }
+    100% { transform: translateX(0); }
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: mediumpurple;
+    border: none;
+    color: #141414;
+    cursor: purple;
+
+    border-radius: 10px;
+    animation: slideInUp 0.5s ease-in-out;
+}
+
+button:hover {
+    background-color: pu;
+}
+
+@keyframes slideInUp {
+    0% { transform: translateY(50px); }
+    100% { transform: translateY(0); }
+}
+
+#statsResult {
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid mediumpurple;
+    background-color: #ffffff;
+    font-weight: bold;
+    border-radius: 10px;
+    animation: slideInDown 0.5s ease-in-out;
+}
+
+@keyframes slideInDown {
+    0% { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
+}
+
+@media screen and (max-width: 600px) {
+    form {
+        width: 80%;
+    }
+}
+
+/* Pour les téléphones */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    form {
+        width: 100%;
+        max-width: none;
+    }
+
+    input {
+        width: calc(100% - 20px); /* Réduire la largeur pour un meilleur ajustement sur les petits écrans */
+    }
+
+    label {
+        color: #ffffff; /* Texte en blanc pour une meilleure lisibilité */
+    }
+}
+
+    </style>
+    <title>Fortnite Stats</title>
+</head>
+<body>
+    <h1>STORMZ Stats Calculator</h1>
+    <form id="statsForm">
+        <label for="totalMatches">Total Matches:</label>
+        <input type="number" id="totalMatches" required><br>
+
+        <label for="totalWins">Total Wins:</label>
+        <input type="number" id="totalWins" required><br>
+
+        <label for="totalKills">Total Kills:</label>
+        <input type="number" id="totalKills" required><br>
+
+        <label for="totalDeaths">Total Deaths:</label>
+        <input type="number" id="totalDeaths" required><br>
+
+        <button type="button" onclick="calculateStats()">Calculate Stats</button>
+    </form>
+
+    <div id="statsResult"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
